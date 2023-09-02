@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: app-a
+  name: app-a
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: "Service"
+    name: service-a
+    weight: null
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-c
+    app.kubernetes.io/component: app-c
+    app.kubernetes.io/instance: app-c
+    app.kubernetes.io/part-of: app-c
+    app.openshift.io/runtime: redhat
+  name: app-c
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-c
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: app-c
+        deploymentconfig: app-c
+    spec:
+      containers:
+      - image: app-c:latest
+        imagePullPolicy: Always
+        name: app-c

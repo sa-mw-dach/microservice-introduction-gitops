@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-a
+    app.kubernetes.io/component: app-a
+    app.kubernetes.io/instance: app-a
+    app.kubernetes.io/part-of: app-a
+    app.openshift.io/runtime: redhat
+  name: app-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-a
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: app-a
+        deploymentconfig: app-a
+    spec:
+      containers:
+      - image: app-a:latest
+        imagePullPolicy: Always
+        name: app-a
