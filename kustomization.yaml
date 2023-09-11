@@ -8,6 +8,7 @@ resources:
 #- servicemesh/app-a-dr-vs.yml
 #- servicemesh/app-b-dr-vs.yml
 #- servicemesh/app-c-dr-vs.yml
+#- servicemesh/gateway.yml
 #- servicemesh/auth.yml
 
 # Testing:
