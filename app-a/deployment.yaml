@@ -20,7 +20,7 @@ spec:
       labels:
         app: app-a
         version: v1
-        deploymentconfig: app-a
+        #TODO app.kubernetes.io/version: v1
       #annotations:
       #  sidecar.istio.io/inject: "true"
     spec:

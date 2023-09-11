@@ -20,7 +20,6 @@ spec:
       labels:
         app: app-c
         version: v1
-        deploymentconfig: app-c
       #annotations:
       #  sidecar.istio.io/inject: "true"
     spec:
