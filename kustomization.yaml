@@ -5,9 +5,9 @@ resources:
 - app-a/
 - app-b/
 - app-c/
-- servicemesh/app-a-dr-vs.yml
-- servicemesh/app-b-dr-vs.yml
-- servicemesh/app-c-dr-vs.yml
+#- servicemesh/app-a-dr-vs.yml
+#- servicemesh/app-b-dr-vs.yml
+#- servicemesh/app-c-dr-vs.yml
 #- servicemesh/auth.yml
 
 # Testing:
