@@ -1,0 +1,39 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: service-c
+spec:
+  host: service-c
+  subsets:
+  - name: version-v1
+    labels:
+      version: v1
+  #trafficPolicy:
+  #  connectionPool:
+  #    tcp:
+  #      maxConnections: 100
+  #    http:
+  #      maxConnections: 100
+  #  outlierDetection:
+  #    consecutive5xxErrors: 1
+  #    interval: 2s
+  #    baseEjectionTime: 10s
+  #    maxEjectionPercent: 100
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: service-c
+spec:
+  hosts:
+  - service-c
+  http:
+  - route:
+    - destination:
+        host: service-c
+        subset: version-v1
+      weight: 100
+    #retries:
+    #  attempts: 3
+    #  perTryTimeout: 1s
+    #  retryOn: 5xx

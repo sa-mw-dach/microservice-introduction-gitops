@@ -5,6 +5,10 @@ resources:
 - app-a/
 - app-b/
 - app-c/
+- servicemesh/app-a-dr-vs.yml
+- servicemesh/app-b-dr-vs.yml
+- servicemesh/app-c-dr-vs.yml
+#- servicemesh/auth.yml
 
 # Testing:
 #   kustomize edit set image app-a:latest=image-registry.openshift-image-registry.svc:5000/user1-apps/app-a:main
