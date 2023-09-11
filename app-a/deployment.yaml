@@ -19,9 +19,41 @@ spec:
     metadata:
       labels:
         app: app-a
+        version: v1
         deploymentconfig: app-a
+      #annotations:
+      #  sidecar.istio.io/inject: "true"
     spec:
       containers:
       - image: app-a:latest
         imagePullPolicy: Always
         name: app-a
+        env:
+        - name: PORT
+          value: "8080"
+        - name: SERVICE_B_HOST
+          value: "service-b:8080"
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        securityContext:
+          privileged: false
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop: ["ALL"]
+          seccompProfile:
+            type: RuntimeDefault 
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
