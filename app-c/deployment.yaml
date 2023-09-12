@@ -20,8 +20,7 @@ spec:
       labels:
         app: app-c
         version: v1
-      #annotations:
-      #  sidecar.istio.io/inject: "true"
+      #TODO Service Mesh annotation comes here
     spec:
       containers:
       - image: app-c:latest

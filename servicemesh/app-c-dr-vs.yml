@@ -8,17 +8,7 @@ spec:
   - name: version-v1
     labels:
       version: v1
-  #trafficPolicy:
-  #  connectionPool:
-  #    tcp:
-  #      maxConnections: 100
-  #    http:
-  #      maxConnections: 100
-  #  outlierDetection:
-  #    consecutive5xxErrors: 1
-  #    interval: 2s
-  #    baseEjectionTime: 10s
-  #    maxEjectionPercent: 100
+  #TODO Circuit Breaker goes here
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -33,7 +23,4 @@ spec:
         host: service-c
         subset: version-v1
       weight: 100
-    #retries:
-    #  attempts: 3
-    #  perTryTimeout: 1s
-    #  retryOn: 5xx
+    #TODO Retry policy comes here
