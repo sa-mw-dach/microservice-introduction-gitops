@@ -1,11 +1,11 @@
 apiVersion: "security.istio.io/v1beta1"
 kind: "RequestAuthentication"
 metadata:
-  name: service-a-requestauthentication
+  name: app-a-requestauthentication
 spec:
   selector:
     matchLabels:
-      app: hello
+      app: app-a
   jwtRules:
   - issuer: "https://<KEYCLOAK URL>/realms/myrealm"
     jwksUri: "http://<KEYCLOAK SVC ADDRESS>:8080/realms/myrealm/protocol/openid-connect/certs"
@@ -15,11 +15,11 @@ spec:
 apiVersion: "security.istio.io/v1beta1"
 kind: "AuthorizationPolicy"
 metadata:
-  name: service-a-authorizationpolicy
+  name: app-a-authorizationpolicy
 spec:
   selector:
     matchLabels:
-      app: service-a
+      app: app-a
   action: DENY
   rules:
   - from:
