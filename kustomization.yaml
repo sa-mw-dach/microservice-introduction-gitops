@@ -12,11 +12,11 @@ resources:
 #
 images:
 - name: app-a:latest
-  newName: image-registry.openshift-image-registry.svc:5000/user1-apps/app-a
+  newName: quay.io/sa-mw-dach/microservice-introduction-app-a
   newTag: main
 - name: app-b:latest
-  newName: image-registry.openshift-image-registry.svc:5000/user1-apps/app-b
+  newName: quay.io/sa-mw-dach/microservice-introduction-app-b
   newTag: main
 - name: app-c:latest
-  newName: image-registry.openshift-image-registry.svc:5000/user1-apps/app-c
+  newName: quay.io/sa-mw-dach/microservice-introduction-app-c
   newTag: main
