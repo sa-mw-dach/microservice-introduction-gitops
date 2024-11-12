@@ -3,7 +3,6 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: nginx-example
-  namespace: {{ .Values.namespacePermissions.user }}-apps
 spec:
   to:
     kind: Service

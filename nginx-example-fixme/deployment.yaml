@@ -9,7 +9,6 @@ metadata:
     app.kubernetes.io/name: nginx-example-fixme
     app.kubernetes.io/part-of: nginx-example-fixme
     app.openshift.io/runtime: nginx
-    app.openshift.io/runtime-namespace: {{ .Values.namespacePermissions.user }}-dev
 spec:
   replicas: 1
   selector:
