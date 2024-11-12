@@ -2,11 +2,11 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: nginx-example
+  name: nginx-example-fixme
 spec:
   to:
     kind: Service
-    name: nginx-example
+    name: nginx-example-fixme
     weight: 100
   port:
     targetPort: 8080
