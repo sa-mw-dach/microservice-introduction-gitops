@@ -1,29 +1,29 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: nginx-example-fixme
+  name: gitops-deployment
   labels:
-    app: nginx-example-fixme
-    app.kubernetes.io/component: nginx-example-fixme
-    app.kubernetes.io/instance: nginx-example-fixme
-    app.kubernetes.io/name: nginx-example-fixme
-    app.kubernetes.io/part-of: nginx-example-fixme
+    app: gitops-deployment
+    app.kubernetes.io/component: gitops-deployment
+    app.kubernetes.io/instance: gitops-deployment
+    app.kubernetes.io/name: gitops-deployment
+    app.kubernetes.io/part-of: gitops-deployment
     app.openshift.io/runtime: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-example-fixme
+      app: gitops-deployment
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: nginx-example-fixme
-        deployment: nginx-example-fixme
+        app: gitops-deployment
+        deployment: gitops-deployment
     spec:
       containers:
-        - name: nginx-example-fixme
-          image: quay.io/openshift-examples/otq-openshift/nginx-example-app:latest
+        - name: gitops-deployment
+          image: quay.io/openshift-examples/otq-openshift/gitops-deployment-app:1731512673
           ports:
             - containerPort: 8080
               protocol: TCP
