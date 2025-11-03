@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: fixme
-          image: quay.io/openshift-examples/otq-openshift/fixme-app:202511030852
+          image: quay.io/openshift-examples/otq-openshift/fixme-app:202511031025
           ports:
             - containerPort: 8080
               protocol: TCP
