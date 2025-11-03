@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: gitops-deployment
-          image: quay.io/openshift-examples/otq-openshift/gitops-deployment-app:202511030852
+          image: quay.io/openshift-examples/otq-openshift/gitops-deployment-app:202511031012
           ports:
             - containerPort: 8080
               protocol: TCP
